@@ -1,0 +1,499 @@
+@charset "UTF-8";
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+index共通 
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/* セクションタイトル */
+.sectit-box{
+    margin: 0 auto 40px;
+    text-align: center;
+    img{
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+.sectit-en{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin: 20px 0 10px;
+}
+
+.sectit-ja{
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.icon-news{
+    width: 35px;
+}
+
+.icon-service{
+    width: 47px;
+}
+
+.icon-partner{
+    width: 58px;
+}
+
+.icon-message{
+    width: 55px;
+}
+
+.icon-company{
+    width: 45px;
+}
+
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+index共通 responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 600px){
+/* セクションタイトル */
+.sectit-box{
+    margin: 0 auto 60px;
+}
+
+.sectit-en{
+    font-size: 60px;
+    margin: 30px 0 20px;
+}
+
+.sectit-ja{
+    font-size: 15px;
+}
+
+.icon-news{
+    width: 50px;
+}
+
+.icon-service{
+    width: 65px;
+}
+
+.icon-partner{
+    width: 75px;
+}
+
+.icon-message{
+    width: 80px;
+}
+
+.icon-company{
+    width: 60px;
+}
+
+
+}/*  end media 600px */
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+MV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.mv-wrap{
+    background: url(../img/bg_MV.jpg) no-repeat center bottom / cover; 
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mv{
+    max-width: 500px;
+    text-align: center;
+    img{
+        display: inline-block;
+        width: 45%;
+        max-width: 210px;
+        margin: 0 0 10px;
+    }
+
+    .mv-txtbox{
+        span{
+            display: block;
+        }
+    }
+
+    .entit-box{
+        display: block;
+    }
+
+    .mvtit-en{
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(20px, 9vw, 50px);
+        font-weight: 700;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+    }
+
+    .mvtit-ja{
+        font-size: clamp(13px, 4vw, 20px);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin: 1em 0 0;
+    }
+}
+
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+MV responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 500px){
+    .mv-wrap{
+        height: 650px;
+    }
+
+    .mv{
+        img{
+            margin: 0 0 20px;
+        }
+    }
+}/*  end media 500px */
+@media screen and (min-width: 800px){
+    .mv{
+        max-width: 1000px;
+        margin: auto;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            display: inline-block;
+            width: 23%;
+            max-width: 260px;
+            margin: 0 40px 0 0;
+        }
+    
+        .mvtit-en{
+            font-size: clamp(20px, 7vw, 76px);
+            line-height: 1.2em;
+            letter-spacing: 0.03em;
+        }
+    
+        .mvtit-ja{
+            font-size: clamp(13px, 2vw, 20px);
+            margin: 10px 0 0;
+        }
+    }
+
+    
+}/*  end media 800px */
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+news
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.news-list{
+    border-top: 1px solid #289BE7;
+    max-height: 250px;
+    overflow-y: scroll;
+    /*スクロールバー非表示（IE・Edge）*/
+    -ms-overflow-style: none;
+    /*スクロールバー非表示（Firefox）*/
+    scrollbar-width: none;
+    /*スクロールバー非表示（Chrome・Safari）*/
+    &::-webkit-scrollbar{
+        display:none;
+    }
+}
+
+.news-item{
+    padding: 20px 10px;
+    border-bottom: 1px solid #289BE7;
+}
+
+.news-date{
+    display: inline-block;
+    color: #666;
+    font-size: 13px;
+    margin: 0 0 10px;
+}
+
+.news-txt{
+    font-weight: 500;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+news responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 600px){
+    .news-item{
+        padding: 40px 0 40px 10px;
+        display: flex;
+    }
+    
+    .news-date{
+        margin: 0 10% 0 0;
+    }
+    
+}/*  end media 600px */
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+service
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.service-item{
+    margin: 0 0 50px;
+    &:last-of-type{
+        margin: 0;
+    }
+}
+
+.intro-txtbox{
+    margin: 10px 0 0;
+
+    .intro-num{
+        color: #289BE7;
+        font-size: 13px;
+    }
+
+    .intro-tit{
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px 0 20px;
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../img/common/deco_bluecircle.svg);
+            background-size: contain;
+            position: relative;
+            top: 4px;
+            margin: 0 7px 0 0;
+            fill: #fff;
+        }
+    }
+}
+
+.service-result{
+    margin: 20px 0 0;
+    .result-tit{
+        font-size: 18px;
+        font-weight: 600;
+
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 4px;
+            border-radius: 4px;
+            background-color: #289BE7;
+            position: relative;
+            top: -4px;
+            margin: 0 6px 0 0;
+        }
+    }
+
+    ul{
+        margin: 5px 0 20px;
+        li{
+            color: #289BE7;
+            span{
+                color: #333;
+            }
+        }
+    }
+
+    .result-pictures{
+        img{
+            display: block;
+            border-radius: 25px;
+            margin: 20px 0 0;
+        }
+    }
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+service responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 700px){
+    .service-item{
+        margin: 0 0 80px;
+    }
+    
+    .service-intro{
+        margin: 0 0 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .f-reverse{
+        flex-direction: row-reverse;
+    }
+
+    .intro-imgbox{
+        padding: 10px;
+        max-width: 50%;
+    }
+    
+    .intro-txtbox{
+        margin: 0;
+        padding: 0 4%;
+        max-width: 50%;
+
+        .intro-tit{
+            font-size: 26px;
+            margin: 13px 0 26px;
+            &:before{
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+    
+    .service-result{
+        margin: 0;
+        .result-tit{
+            font-size: 24px;    
+            &:before{
+                width: 20px;
+                top: -6px;
+            }
+        }
+    
+        ul{
+            margin: 13px 0 30px;
+        }
+    
+        .result-pictures{
+            display: flex;
+            // flex-wrap: wrap;
+            img{
+                width: 30%;
+                margin: 14px;
+            }
+        }
+    }
+}/*  end media 600px */
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+partner
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.container-link{
+    margin: 40px 0 0;
+    text-align: center;
+}
+
+.partner-logo{
+    display: inline-block;
+    max-width: 250px;
+    border: 3px solid #289BE7;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px 40px;
+    transition : all  0.3s ease;
+
+    &:hover{
+        opacity: 0.6;
+        transition : all  0.3s ease;
+    }
+}
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+partner responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 600px){
+
+}/*  end media 600px */
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+message
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.message-box{
+    border-radius: 40px;
+    border: 4px solid #289BE7;
+    padding: 40px 7%;
+}
+
+.message-txtbox{
+    p:first-of-type{
+        font-size: 5vw;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+message responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 400px){
+    .message-txtbox{
+        p:first-of-type{
+            font-size: 18px;
+        }
+    }
+}/*  end media 400px */
+
+@media screen and (min-width: 600px){
+    .message-box{
+        border-radius: 50px;
+        border: 4px solid #289BE7;
+        padding: 70px;
+    }
+
+    .message-txtbox{
+        max-width: 700px;
+        margin: auto;
+        p:first-of-type{
+            margin: 0 0 30px 0;
+            font-size: 24px;
+        }
+    }
+}/*  end media 600px */
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+company
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.company-list{
+    border-top: 1px solid #289BE7;
+
+}
+
+.company-item{
+    padding: 20px 0;
+    border-bottom: 1px solid #289BE7;
+
+    dt{
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        min-width: 100px;
+
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-image: url(../img/common/deco_bluecircle.svg);
+            background-size: contain;
+            position: relative;
+            top: 2px;
+            margin: 0 5px 0 0;
+        }
+    }
+}
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+company responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 440px){
+    .company-item{
+        display: flex;
+        dt{
+            margin: 0 15% 0 0;
+        }
+    }
+}/*  end media 500px */
+
+@media screen and (min-width: 600px){
+    .company-item{
+        padding: 40px 0;
+        dt{
+            margin: 0 20% 0 0;
+        }
+    }
+}/*  end media 600px */
+

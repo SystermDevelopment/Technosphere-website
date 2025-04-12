@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+header
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/* SP */  
+  .header{
+    width:100%;
+    background:#fff;
+    height: 50px;
+    position:fixed;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    a{
+        img{
+            width: 160px;
+        }
+    }
+  }
+
+
+.g-nav{
+    position:fixed;
+    z-index: 900;
+    top:50px;
+    right: -100%;
+    width:70%;
+    height: 100vh;
+    background: #289BE7;
+    transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+.g-nav.panelactive{
+    right: 0;
+}
+
+// 背景ぼかす
+.mainblur{
+	filter: blur(8px);
+}
+
+/*ナビゲーションの縦スクロール*/
+.g-nav.panelactive .g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 70%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+}
+
+/*ナビゲーション*/
+.g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 0;
+}
+
+
+.g-nav li{
+  list-style: none;
+  text-align: center;
+}
+
+.g-nav li a{
+  color: #fff;
+  padding:15px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  white-space: nowrap;
+  .fa-regular{
+    padding: 0 0 0 4px;
+  }
+}
+
+/*========= ハンバーガーボタン ===============*/
+.hamburger-btn{
+    position:fixed;
+    z-index: 9999;
+    top:0px;
+    right: 0px;
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+  
+/*×に変化*/  
+.hamburger-btn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+  background-color: #333;
+    width: 45%;
+  }
+
+.hamburger-btn span:nth-of-type(1) {
+  top:15px; 
+}
+
+.hamburger-btn span:nth-of-type(2) {
+  top:23px;
+}
+
+.hamburger-btn span:nth-of-type(3) {
+  top:31px;
+}
+
+.hamburger-btn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.hamburger-btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+
+
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+header　responsive
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆*/
+@media screen and (min-width: 800px){
+/* PC */  
+.hamburger-btn{
+    display: none;
+}
+
+.header{
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 2%;
+    a{
+        img{
+            width: 200px;
+        }
+    }
+  }
+
+.g-nav{
+    position:static;
+    width:auto;
+    height: auto;
+    background: none;
+}
+
+/*ナビゲーション*/
+.g-nav ul {
+    position: static;
+    transform: translateX(0%);
+    display: flex;
+
+}
+
+.g-nav li a{
+  color: #333;
+  font-size: 15px;
+  padding: 10px;
+  transition : all  0.3s ease-in-out;
+
+
+  &:hover{
+  color: #289BE7;
+  transition : all  0.3s ease-in-out;
+  }
+
+}
+
+}/*  end media 800px */
+
+@media screen and (min-width: 900px){
+    .g-nav li a{
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+}/*  end media 900px */

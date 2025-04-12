@@ -1,0 +1,129 @@
+/*==================================================
+ふわっと現れるアニメーション
+===================================*/
+/* その場で */
+.fadeIn{
+  animation-name:fadeInAnime;
+  animation-duration:1.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 下から */
+  
+  .fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+  /* 上から */
+  
+  .fadeDown{
+  animation-name:fadeDownAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeDownAnime{
+    from {
+      opacity: 0;
+    transform: translateY(-100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  /* 左から */
+  
+  .fadeLeft{
+  animation-name:fadeLeftAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeLeftAnime{
+    from {
+      opacity: 0;
+    transform: translateX(-100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+  
+  /* 右から */
+  
+  .fadeRight{
+  animation-name:fadeRightAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeRightAnime{
+    from {
+      opacity: 0;
+    transform: translateX(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+
+ /* 遅延 */
+
+  .delay01 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay02 {
+    animation-delay: 0.4s;
+  }
+  
+  .delay03 {
+    animation-delay: 0.6s;
+  }
+
+    
+    /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+     
+    .fadeUpTrigger{
+        opacity: 0;
+    }
+
+    .firstLoadTrigger{
+        opacity: 0;
+    }
