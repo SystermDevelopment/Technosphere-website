@@ -5,7 +5,7 @@
 ## 📁 ディレクトリ構成
 
 ```
-www_new/
+www/
 ├── index.php               # トップページ
 ├── contact.php             # お問い合わせページ
 ├── thanks.php              # 送信完了ページ
