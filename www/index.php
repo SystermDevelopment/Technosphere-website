@@ -62,7 +62,11 @@
         <h3>IoT・エッジAI連携</h3>
         <p>Jetson Orinやラズパイによるリアルタイム制御・AI推論に対応。</p>
       </div>
-    
+      <section style="text-align: center; margin: 40px 0;">
+        <a href="/ai_chatbot/">
+            <img src="/assets/img/banner_rag_ai_v2.png" alt="AIチャットシステム特設ページ" style="max-width: 100%; border-radius: 12px;">
+        </a>
+      </section>
     </div>
   </div>
 </section>

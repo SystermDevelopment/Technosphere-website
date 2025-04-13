@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIチャットボット特設ページ</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #e6faff; }
+    header { background: #67d8bd; color: white; padding: 30px 20px; text-align: center; }
+    section { padding: 40px 20px; max-width: 1200px; margin: auto; }
+    h2 { margin-bottom: 20px; border-left: 8px solid #67d8bd; padding-left: 10px; color: #006666; }
+    .case-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .case { width: 280px; text-align: center; background: #ffffff; border: 1px solid #b2ebf2; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .case img { width: 100%; border-radius: 8px; }
+    iframe { width: 100%; max-width: 600px; height: 400px; border: 1px solid #ccc; border-radius: 8px; display: block; margin: auto; }
+    .diagram { max-width: 800px; margin: 20px auto; display: block; border-radius: 10px; }
+    .cta-button {
+      display: inline-block; margin-top: 30px; padding: 15px 30px;
+      background: #67d8bd; color: white; font-weight: bold; border-radius: 6px;
+      text-decoration: none; font-size: 18px;
+    }
+    .message {
+      padding: 8px 12px;
+      margin: 5px 0;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 80%;
+      clear: both;
+    }
+    
+    .user {
+      background: #c8f7f0;
+      float: left;
+      text-align: right;
+    }
+    
+    .ai {
+      background: #f0f0f0;
+      float: right;
+      text-align: right;
+    }
+    
+    #chatbox {
+      background:#fff; padding:15px; border-radius:10px;
+      border:1px solid #ccc; max-width:600px; margin:auto;
+    }
+    
+    #chat-log {
+      min-height:200px; max-height:300px; overflow-y:auto;
+      margin-bottom:10px; padding-right:5px;
+    }
+    
+    .chat-input { display:flex; gap:5px; }
+    .chat-input input { flex:1; padding:8px; }
+    .chat-input button { padding:8px 16px; }
+    
+    footer {
+      text-align: center; padding: 20px;
+      font-size: 0.9em; color: #555; background: #ccf2f4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AIチャットボット特設ページ</h1>
+    <p>マニュアル・設計書・FAQに回答する次世代AI</p>
+  </header>
+
+  <section id="service">
+    <h2>このシステムでできること</h2>
+    <p>
+      本システムは、企業内のマニュアル・FAQ・設計書などのドキュメントをAIに読み込ませることで、問い合わせ対応を効率化するチャットボットプラットフォームです。
+      Retrieval-Augmented Generation（RAG）構成を採用し、ユーザーからの質問に対して該当ドキュメントを検索し、GPTベースのAIが自然な文章で回答を生成します。
+      操作マニュアルの検索支援、過去Q&Aの自動対応、開発チーム向けの技術的な問合せ対応など、さまざまな業務で活用が可能です。
+      Slackとの連携による手動返信や、将来的な自動応答への拡張にも対応しており、柔軟かつ実践的なAI活用が可能です。
+    </p>
+  </section>
+
+  <section id="cases">
+    <h2>導入事例</h2>
+    <div class="case-list">
+      <div class="case">
+        <img src="/assets/img/case_manual_ai.png" alt="操作マニュアル対応">
+        <p>マニュアルを読み込んで、使い方にチャットで回答</p>
+      </div>
+      <div class="case">
+        <img src="/assets/img/case_faq_ai.png" alt="FAQ自動応答">
+        <p>コールセンターの過去Q&Aを学習し自動応答</p>
+      </div>
+      <div class="case">
+        <img src="/assets/img/case_system_design_ai.png" alt="開発設計書応答">
+        <p>システム設計書を読み込んで技術的な問い合わせに回答</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2>デモチャット</h2>
+    <div id="chatbox">
+      <div id="chat-log"></div>
+      <div class="chat-input">
+        <input id="user-input" type="text" placeholder="ここに入力...">
+        <button onclick="sendMessage()">送信</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>AIの仕組み（RAG構成）</h2>
+    <p>当社のチャットボットは、事前に読み込んだドキュメント（マニュアル・FAQ・設計書）をベクトル検索し、GPTを使って最適な回答を生成します。</p>
+    <img class="diagram" src="/assets/img/rag_structure.png" alt="RAG構成の図解">
+  </section>
+
+  <footer>
+    &copy; 2025 Technosphere co.,ltd All rights reserved.
+  </footer>
+
+  <script>
+    const endpoint = "https://chat.technosphere.co.jp";
+
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const log = document.getElementById("chat-log");
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      const name = "Webユーザー";
+
+      const userMessage = document.createElement("div");
+      userMessage.className = "message user";
+      userMessage.textContent = "あなた: " + userText;
+      log.appendChild(userMessage);
+
+      fetch(`${endpoint}/api/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true"
+        },
+        body: JSON.stringify({ name, message: userText })
+      }).then(res => {
+        const replyMessage = document.createElement("div");
+        replyMessage.className = "message ai";
+        replyMessage.textContent = "AI: ご質問ありがとうございます。ＡＩがドキュメントを確認中です。";
+        log.appendChild(replyMessage);
+        log.scrollTop = log.scrollHeight;
+      }).catch(err => {
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "message ai";
+        errorMessage.textContent = "AI: 通信エラーが発生しました。";
+        log.appendChild(errorMessage);
+      });
+
+      input.value = "";
+    }
+
+    // 🔁 返信を10秒おきに取得
+    let firstPoll = true;
+    
+    setInterval(() => {
+      fetch(`${endpoint}/api/reply`, {
+        headers: { "ngrok-skip-browser-warning": "true" }
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.text && (!window.lastDisplayed || data.timestamp !== window.lastDisplayed)) {
+            if (firstPoll) {
+              // 初回は表示せずタイムスタンプだけ更新
+              window.lastDisplayed = data.timestamp;
+              firstPoll = false;
+              return;
+            }
+    
+            const replyDiv = document.createElement("div");
+            replyDiv.className = "message ai";
+            replyDiv.textContent = "AI返信: " + data.text;
+            document.getElementById("chat-log").appendChild(replyDiv);
+            window.lastDisplayed = data.timestamp;
+          }
+        });
+    }, 10000);
+
+    document.getElementById("user-input").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // 改行を防ぐ
+        sendMessage(); // 通常の送信処理
+      }
+    });
+
+  </script>
+</body>
+</html>
