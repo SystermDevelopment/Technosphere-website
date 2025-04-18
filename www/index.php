@@ -1,9 +1,7 @@
 <?php
-/**
- * Technosphere ウェブサイト - メインページ
- * -------------------------------------
- * 株式会社テクノスフィア公式ウェブサイトのメインページです。
- */
+$page_title = 'AI × 画像認識で業務効率化｜株式会社テクノスフィア';
+$page_desc  = '大阪発のシステム開発会社テクノスフィアは、画像認識・RAG チャットボット・エッジ AI まで一貫対応。要件定義から運用までワンストップで支援します。';
+include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -492,8 +490,17 @@
                     <a href="privacy">プライバシーポリシー</a>
                 </div>
             </div>
-            <small>© TECHNO SPHERE Co.,Ltd. All Rights Reserved.</small>
+            <small>© Technosphere Co.,Ltd. All Rights Reserved.</small>
         </div>
+        <li class="sns-banner fb-banner">
+            <a href="https://www.facebook.com/technosphere.co.ltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="株式会社テクノスフィア Facebook ページ">
+                <i class="fa-brands fa-facebook"></i>
+                <span>Follow us on&nbsp;Facebook</span>
+            </a>
+        </li>
     </footer>
 
     <!-- JS -->

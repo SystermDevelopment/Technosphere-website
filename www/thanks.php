@@ -1,4 +1,9 @@
 <?php
+$page_title = 'AI × 画像認識で業務効率化｜株式会社テクノスフィア';
+$page_desc  = '大阪発のシステム開発会社テクノスフィアは、画像認識・RAG チャットボット・エッジ AI まで一貫対応。要件定義から運用までワンストップで支援します。';
+include 'header.php';
+?>
+<?php
     $motourl = $_SERVER['HTTP_REFERER'];
     if (false === strpos($motourl, 'contact')) {
         // コンタクトページからの遷移でなければリダイレクト
