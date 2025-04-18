@@ -379,8 +379,6 @@ small {
 /* ===== ニュースセクション ===== */
 .news-list {
   border-top: 1px solid var(--primary-color);
-  max-height: 250px;
-  overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
