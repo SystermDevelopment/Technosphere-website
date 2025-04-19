@@ -48,6 +48,7 @@ include 'header.php';
                 <li><a href="#message">MESSAGE</a></li>
                 <li><a href="#company">COMPANY</a></li>
                 <li><a href="contact">CONTACT</a></li>
+                <li> <a href="https://www.facebook.com/technosphere.co.ltd" target="_blank" rel="noopener"> <i class="fab fa-facebook-square" aria-label="Facebook"></i> </a> </li> 
             </ul>
         </nav>
     </header>

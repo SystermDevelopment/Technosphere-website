@@ -18,7 +18,8 @@ if (!isset($page_desc)) {
     <nav class="g-nav">
         <div class="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
             <ul>
-                <li><a href="./#service">SERVICE</a></li>  
+                <li><a href="./#service">SERVICE</a></li> 
+                <li><a href="./#solutions">AI SOLUTIONS</a></li>
                 <li><a href="./#message">MESSAGE</a></li>
                 <li><a href="./#company">COMPANY</a></li>  
                 <li><a href="https://en-gage.net/technosphere_saiyo" target="_blank">RECRUIT<i class="fa-regular fa-window-restore"></i></a></li>  
