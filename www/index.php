@@ -6,6 +6,7 @@ include 'header.php';
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <style>body { visibility: hidden; }</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社テクノスフィア</title>
@@ -18,13 +19,25 @@ include 'header.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- css  -->
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome 6.5.1 -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <!-- js -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://kit.fontawesome.com/a72af8db61.js" crossorigin="anonymous"></script>
+    <!-- tsParticles 本体 & プリセット -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js" defer></script>
 </head>
-<body class="firstLoadTrigger">
+<body>
+    <!-- パーティクル背景 -->
+    <div id="tsparticles"></div>
     <!-- header -->
     <header class="header">
         <a href="index">
@@ -40,17 +53,24 @@ include 'header.php';
         
         <!-- グローバルナビゲーション -->
         <nav class="g-nav">
-            <ul>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#service">SERVICE</a></li>
-                <li><a href="#solutions">AI SOLUTIONS</a></li>
-                <li><a href="#partner">PARTNER</a></li>
-                <li><a href="#message">MESSAGE</a></li>
-                <li><a href="#company">COMPANY</a></li>
-                <li><a href="contact">CONTACT</a></li>
-                <li> <a href="https://www.facebook.com/technosphere.co.ltd" target="_blank" rel="noopener"> <i class="fab fa-facebook-square" aria-label="Facebook"></i> </a> </li> 
-            </ul>
+            <div class="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                <ul>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="./#service">SERVICE</a></li> 
+                    <li><a href="./#solutions">AI SOLUTIONS</a></li>
+                    <li><a href="./#message">MESSAGE</a></li>
+                    <li><a href="./#company">COMPANY</a></li>  
+                    <li><a href="https://en-gage.net/technosphere_saiyo" target="_blank">RECRUIT<i class="fa-regular fa-window-restore"></i></a></li>  
+                    <li><a href="contact">CONTACT</a></li>  
+                    <li><a href="https://www.facebook.com/technosphere.co.ltd" target="_blank" rel="noopener"> <i class="fab fa-facebook-square" aria-label="Facebook"></i> </a> </li> 
+                </ul>
+            </div>
         </nav>
+        <script>
+            window.addEventListener('load', ()=> {
+                document.body.style.visibility = 'visible';
+            });
+        </script>
     </header>
 
     <main>
@@ -481,30 +501,26 @@ include 'header.php';
     </main>
 
     <!-- フッター -->
-    <footer>
-        <div class="container">
-            <div class="footer-flex">
-                <a href="index.php">
-                    <img src="assets/img/common/logo_footer.svg" alt="株式会社テクノスフィア">
-                </a>
-                <div class="txt-box">
-                    <a href="privacy">プライバシーポリシー</a>
-                </div>
-            </div>
-            <small>© Technosphere Co.,Ltd. All Rights Reserved.</small>
-        </div>
-        <li class="sns-banner fb-banner">
-            <a href="https://www.facebook.com/technosphere.co.ltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="株式会社テクノスフィア Facebook ページ">
-                <i class="fa-brands fa-facebook"></i>
-                <span>Follow us on&nbsp;Facebook</span>
-            </a>
-        </li>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <!-- JS -->
+    <script>
+     window.addEventListener("load", () => {
+        tsParticles.load("tsparticles", {
+          preset: "links",
+          background: { color: "#000" },           // 必要なら無地背景
+          particles: {
+            color: { value: ["#00B4FF", "#A4FF00"]},
+            move: { enable: true, speed: 2 },
+            number: { value: 60 },
+            shape: { type: "circle" }
+          },
+          interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" } }
+        }
+        });
+      });
+    </script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
