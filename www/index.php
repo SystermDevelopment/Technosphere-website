@@ -20,7 +20,6 @@ include 'header.php';
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- css  -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <!-- Font Awesome 6.5.1 -->
     <link
         rel="stylesheet"

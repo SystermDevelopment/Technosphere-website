@@ -18,7 +18,7 @@ if (!isset($page_desc)) {
     <nav class="g-nav">
         <div class="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
             <ul>
-                <li><a href="#news">NEWS</a></li>
+                <li><a href="./#news">NEWS</a></li>
                 <li><a href="./#service">SERVICE</a></li> 
                 <li><a href="./#solutions">AI SOLUTIONS</a></li>
                 <li><a href="./#message">MESSAGE</a></li>
