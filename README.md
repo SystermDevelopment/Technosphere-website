@@ -17,7 +17,6 @@
 │   └── index.php           # 特設ページ本体
 ├── assets/
 │   ├── css/                # スタイルシート
-│   │   ├── reset.css       # リセットCSS
 │   │   └── style.css       # メインスタイル
 │   ├── js/                 # JavaScript
 │   │   ├── jquery-3.7.1.min.js  # jQuery
