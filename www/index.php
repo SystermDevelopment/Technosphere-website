@@ -105,17 +105,28 @@ include 'header.php';
                 <div class="news-list fadeUpTrigger">
                     <!-- ニュース項目1 -->
                     <div class="news-item">
+                        <time class="news-date" datetime="2025-04-23">2025.04.23</time>
+                        <p class="news-txt">
+                            <a href="https://qiita.com/Piyovate/items/b0e5a4b2c4c1ed7a3bf8" target="_blank" rel="noopener">
+                                ラズベリーパイを活用した『社内環境（温湿度）見える化システム』の開発ブログをQiitaにて連載を開始しました。
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- ニュース項目2 -->
+                    <div class="news-item">
                         <time class="news-date" datetime="2025-04-12">2025.04.12</time>
                         <p class="news-txt">サイトをリニューアルしました。AIソリューションや導入実績を中心に構成を刷新しました。</p>
                     </div>
                     
-                    <!-- ニュース項目2 -->
+                    <!-- ニュース項目3 -->
                     <div class="news-item">
                         <time class="news-date" datetime="2025-02-12">2025.02.12</time>
                         <p class="news-txt">採用ページをリニューアルしました！</p>
                     </div>
                     
-                    <!-- ニュース項目3 -->
+                    <!-- ニュース項目4 -->
                     <div class="news-item">
                         <time class="news-date" datetime="2023-10-24">2023.10.24</time>
                         <p class="news-txt">
