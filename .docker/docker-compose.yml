@@ -1,0 +1,16 @@
+version: '3.8'
+name: 'ts-homepage'
+services:
+  apache:
+    container_name: 'apache'
+    # image: 'httpd:latest'
+    image: 'php:8.4-apache'
+    # command: >
+      # sh -c "apt-get update && apt-get install -y php libapache2-mod-php && apachectl -D FOREGROUND"
+    ports:
+      - '80:80'
+    volumes:
+      - ../www:/var/www/html/
+      - ./apache2.conf:/etc/apache2/apache2.conf
+      # - ../www:/usr/local/apache2/htdocs/
+      # - ./httpd.conf:/usr/local/apache2/conf/httpd.conf

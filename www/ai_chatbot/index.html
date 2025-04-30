@@ -49,6 +49,10 @@ include 'header.php';
       background:#fff; padding:15px; border-radius:10px;
       border:1px solid #ccc; max-width:600px; margin:auto;
     }
+
+    #demo-iframe {
+      max-width: 800px;
+    }
     
     #chat-log {
       min-height:200px; max-height:300px; overflow-y:auto;
@@ -101,13 +105,14 @@ include 'header.php';
 
   <section id="demo">
     <h2>デモチャット</h2>
-    <div id="chatbox">
+    <!-- <div id="chatbox">
       <div id="chat-log"></div>
       <div class="chat-input">
         <input id="user-input" type="text" placeholder="ここに入力...">
         <button onclick="sendMessage()">送信</button>
       </div>
-    </div>
+    </div> -->
+    <iframe id="demo-iframe" src="https://chat.technosphere.co.jp/"></iframe>
   </section>
 
   <section id="how">

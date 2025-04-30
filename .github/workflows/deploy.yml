@@ -1,0 +1,53 @@
+# SakuraレンタルサーバにデプロイするためのGitHub Actionsの設定ファイル
+# TODO: FTPの設定をGitHub Secretsに登録すること
+# 1. GitHubのリポジトリのSettingsに移動
+# 2. Secrets and variables > Actionsに移動
+# 3. New repository secretをクリック
+# 4. 以下の3つのシークレットを追加
+#    - FTP_SERVER: FTPサーバのアドレス（例: ftp.example.com）
+#    - FTP_USERNAME: FTPのユーザ名
+#    - FTP_PASSWORD: FTPのパスワード
+# 5. 保存
+# 6. このファイルをコミットして、GitHub Actionsが実行されることを確認
+#
+# TODO: Sakura サーバでFTPアクセスを「海外」から許可する必要がある 
+
+name: 🚀 technosphere-homepage-deploy
+
+on:
+  ###############################
+  # 一時的に actions を無効化
+  push:
+    branches-ignore:
+      - '**'
+  ###############################
+
+  # mainブランチに変更があった場合
+  # push:
+  #  branches: [main]
+
+  # 手動でデプロイする場合
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy:
+    name: 🎉 deploy
+    
+    runs-on: ubuntu-latest
+    steps:
+      # 1. リポジトリ内容を取得
+      - name: 🚚 checkout-code
+        uses: actions/checkout@v4
+
+      # 2. FTPを経由してデプロイを行う
+      - name: 📂 deploy-to-FTP-server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          # FTPサーバのホスト名
+          server: ${{ secrets.FTP_SERVER }}
+          # FTPサーバのユーザ名
+          username: ${{ secrets.FTP_USERNAME }}
+          # FTPサーバのパスワード
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./www
+          server-dir: /home/purplealpaca28/www
