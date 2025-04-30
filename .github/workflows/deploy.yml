@@ -17,14 +17,14 @@ name: 🚀 technosphere-homepage-deploy
 on:
   ###############################
   # 一時的に actions を無効化
-  push:
-    branches-ignore:
-      - '**'
+  #push:
+  #  branches-ignore:
+  #    - '**'
   ###############################
 
   # mainブランチに変更があった場合
-  # push:
-  #  branches: [main]
+  push:
+   branches: [main]
 
   # 手動でデプロイする場合
   workflow_dispatch:
