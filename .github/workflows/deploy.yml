@@ -51,3 +51,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./www/
           server-dir: /home/purplealpaca28/www/
+          passive: true
+          retries: 3
+          timeout: 60000
