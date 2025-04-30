@@ -49,5 +49,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           # FTPサーバのパスワード
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./www
-          server-dir: /home/purplealpaca28/www
+          local-dir: ./www/
+          server-dir: /home/purplealpaca28/www/
