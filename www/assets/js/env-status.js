@@ -18,6 +18,31 @@ function getHumidEmoji(humid) {
     else return '🌵';
 }
 
+//祝日を自動で取得する関数
+async function fetchHolidays() {
+    const response = await fetch(ENV_CONFIG.national_holidays_apiUrl);
+    if (!response.ok) throw new Error('祝日データ取得失敗');
+    const holidays = await response.json();
+    return holidays.map(day => day.date);
+}
+
+//初期化（即時実行関数で起動時に自動実行）
+(async function initializeHolidays() {
+    try {
+        const apiHolidays = await fetchHolidays();
+
+        // ★ 元の手動指定の臨時休業日を残しつつ、APIの祝日をマージ
+        ENV_CONFIG.holidays = Array.from(new Set([...ENV_CONFIG.holidays, ...apiHolidays]));
+        console.log('祝日取得成功:', ENV_CONFIG.holidays);
+    } catch (err) {
+        console.error('祝日取得エラー:', err);
+        ENV_CONFIG.holidays = [];
+    }
+    // ★ 祝日データ取得後に表示を更新する
+    await updateComfortStatus();
+})();
+
+
 // 営業時間かどうか判定する関数
 function checkBusinessStatus() {
     const now = new Date();
@@ -63,7 +88,7 @@ async function updateComfortStatus() {
     }
 
     try {
-        const res = await fetch(ENV_CONFIG.apiUrl);
+        const res = await fetch(ENV_CONFIG.rasPiPico_apiUrl);
         const data = await res.json();
 
         const temp = data.temperature.replace('C', '');
@@ -88,5 +113,4 @@ async function updateComfortStatus() {
 }
 
 // 更新間隔
-updateComfortStatus();
 setInterval(updateComfortStatus, 600000); // 本番環境：10分
