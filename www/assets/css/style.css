@@ -1348,3 +1348,17 @@ small {
     scroll-behavior: auto !important;
   }
 }
+
+/* 最初は常に非表示（画面幅関係なく強制的に非表示） */
+nav.g-nav .menu-env-status {
+  display: none !important;
+}
+
+/* ハンバーガーメニューが展開されている（panelactiveクラスが付与された）時のみ表示 */
+nav.g-nav.panelactive .menu-env-status {
+  display: block !important;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff; /* 見やすく白にしています */
+}

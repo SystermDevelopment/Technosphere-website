@@ -20,7 +20,9 @@
 │   │   └── style.css       # メインスタイル
 │   ├── js/                 # JavaScript
 │   │   ├── jquery-3.7.1.min.js  # jQuery
-│   │   └── main.js         # メインスクリプト（アニメーション・UI制御）
+│   │   ├── main.js         # メインスクリプト（アニメーション・UI制御）
+│   │   ├── env-status.js   # 現在のオフィス環境の管理
+│   │   └── raspi-config.js # raspi関連のjsの設定ファイル
 │   ├── img/                # 画像
 │   │   ├── common/         # 共通画像（ロゴなど）
 │   │   │   ├── logo.svg    # メインロゴ
