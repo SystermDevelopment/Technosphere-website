@@ -7,6 +7,11 @@
             <div class="txt-box">
                 <a href="privacy">PRIVACYPOLICY</a>
                 <small>&copy; 2023 Technosphere Inc.</small>
+
+                <div class="env-status">
+                    現在のオフィス環境：
+                    <span id="status-icon">🔄</span>
+                </div>
             </div>
             <ul class="footer-sns">
                 <li>

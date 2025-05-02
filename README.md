@@ -20,7 +20,9 @@
 │   │   └── style.css       # メインスタイル
 │   ├── js/                 # JavaScript
 │   │   ├── jquery-3.7.1.min.js  # jQuery
-│   │   └── main.js         # メインスクリプト（アニメーション・UI制御）
+│   │   ├── main.js         # メインスクリプト（アニメーション・UI制御）
+│   │   ├── env-status.js   # 現在のオフィス環境の管理
+│   │   └── raspi-config.js # raspi関連のjsの設定ファイル
 │   ├── img/                # 画像
 │   │   ├── common/         # 共通画像（ロゴなど）
 │   │   │   ├── logo.svg    # メインロゴ
@@ -115,6 +117,38 @@ php -S localhost:8000
 3. 変更をコミット (`git commit -m 'Add amazing feature'`)
 4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
 5. プルリクエストを作成
+
+---
+
+## 📌 休日（休業日）の追加手順
+
+ホームページ上に表示される「休業日」を追加する場合は、以下のファイルを修正します。
+
+### 設定ファイルの場所
+```
+assets/js/raspi-config.js
+```
+
+### 変更方法
+
+`raspi-config.js` ファイル内の `holidays` 配列に、休日として追加したい日付を以下のような形式で追記してください。
+
+```js
+// raspi-config.jsの休日追加例
+const ENV_CONFIG = {
+    holidays: [
+        '2021-07-21', // 例:創業日と同様の形式で休業日を入力してください
+        // 臨時休業日をここに追加
+    ]
+};
+```
+
+### 備考
+
+- 日付の形式は `'yyyy-mm-dd'`（半角）で記載してください。
+- 国民の祝日についてはAPIを利用し自動的に反映されるため対応は不要です。
+- 使用API: https://api.national-holidays.jp/（現在の年を自動的に取得して利用）
+- 変更後はブラウザのキャッシュをクリア（Ctrl+Shift+R）して反映を確認してください。
 
 ---
 
