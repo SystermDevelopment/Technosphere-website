@@ -12,6 +12,3 @@ RewriteRule ^(.*)$ $1.php
 RewriteCond %{THE_REQUEST} \.(php|html)\ HTTP
 RewriteRule ^(.*)\.(php|html)$ $1 [R=301,L]
 
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-</IfModule>
