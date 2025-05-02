@@ -32,8 +32,9 @@ include 'header.php';
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://kit.fontawesome.com/a72af8db61.js" crossorigin="anonymous"></script>
     <!-- tsParticles 本体 & プリセット -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js" defer></script>
+    <!-- tsParticles v3 最新版CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@3/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js"></script>
 </head>
 <body>
     <!-- パーティクル背景 -->
@@ -483,23 +484,30 @@ include 'header.php';
     <?php require_once("footer.php"); ?>
 
     <!-- JS -->
+    <!-- 最新バージョンの設定（tsParticles v3.x以降推奨） -->
     <script>
-     window.addEventListener("load", () => {
-        tsParticles.load("tsparticles", {
-          preset: "links",
-          background: { color: "#000" },           // 必要なら無地背景
-          particles: {
-            color: { value: ["#00B4FF", "#A4FF00"]},
-            move: { enable: true, speed: 2 },
-            number: { value: 60 },
-            shape: { type: "circle" }
-          },
-          interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" } }
-        }
+    window.addEventListener("load", async () => {
+        await tsParticles.load({
+            id: "tsparticles",
+            options: {
+                preset: "links",                             // プリセット：粒子が相互にリンクする設定
+                background: { color: "#000" },               // 背景色を黒に設定
+                particles: {
+                    color: { value: ["#00B4FF", "#A4FF00"] }, // 粒子の色（青と緑）
+                    move: { enable: true, speed: 2 },         // 粒子の動きを有効化、速度を指定
+                    number: { value: 60 },                    // 画面に表示する粒子の数
+                    shape: { type: "circle" }                // 粒子の形を円形に設定
+                },
+                interactivity: {
+                    events: {
+                        onhover: { enable: true, mode: "repulse" } // マウスホバーで粒子を遠ざける
+                    }
+                }
+            }
         });
-      });
+    });
     </script>
+    
     <script src="assets/js/main.js"></script>
     <!--画面の読み込みが全て完了してから表示-->
     <script>

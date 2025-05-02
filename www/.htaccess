@@ -12,3 +12,5 @@ RewriteRule ^(.*)$ $1.php
 RewriteCond %{THE_REQUEST} \.(php|html)\ HTTP
 RewriteRule ^(.*)\.(php|html)$ $1 [R=301,L]
 
+# favicon.icoへのリクエストを正しい場所に誘導
+RewriteRule ^favicon\.ico$ assets/img/common/favicon.ico [L]
