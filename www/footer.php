@@ -40,3 +40,9 @@
         </div>
     </div>
 </footer>
+
+<!-- 設定ファイルを先に読み込む -->
+<script src="assets/js/raspi-config.js"></script>
+
+<!-- env-statusのJavaScriptを読み込む -->
+<script src="assets/js/env-status.js"></script>
