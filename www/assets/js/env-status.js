@@ -33,7 +33,6 @@ async function fetchHolidays() {
 
         // ★ 元の手動指定の臨時休業日を残しつつ、APIの祝日をマージ
         ENV_CONFIG.holidays = Array.from(new Set([...ENV_CONFIG.holidays, ...apiHolidays]));
-        console.log('祝日取得成功:', ENV_CONFIG.holidays);
     } catch (err) {
         console.error('祝日取得エラー:', err);
         ENV_CONFIG.holidays = [];
