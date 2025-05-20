@@ -36,6 +36,17 @@
                         <span class="visually-hidden">X（旧Twitter）</span>
                     </a>
                 </li>
+                <li>
+                    <a
+                        href="https://www.instagram.com/technosphere_co/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="株式会社テクノスフィア Instagram ページ"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="visually-hidden">Instagram</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
