@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // エラーがない場合、メールを送信
     if (empty($errors)) {
-        $to = "info@technosphere.co.jp";
+        $to = "info_wjioefiwof@technosphere.co.jp";
         $subject = "株式会社テクノスフィアWebサイトのフォームよりお問い合わせがありました";
         $headers = "From: $email";
         // $headers = "From: $email". "\r\n";
