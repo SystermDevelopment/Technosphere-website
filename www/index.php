@@ -119,9 +119,6 @@ include 'header.php';
                         ぜひお気軽にお問合せください。
                     </p>
                 </div>
-                <div class="btn-box">
-                    <a href="contact" class="btn m-auto"><span>CONTACT</span></a>
-                </div>
             </div>
         </section>
 
@@ -739,5 +736,13 @@ BCP（事業継続計画）対策を視野に入れたクラウド活用にも�
             document.body.style.visibility = 'visible';
         });
     </script>
+    
+    <!-- フローティングお問い合わせボタン -->
+    <div class="floating-contact-btn">
+        <a href="contact" class="floating-contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>お問い合わせ</span>
+        </a>
+    </div>
 </body>
 </html>

@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ヘッダースクロール時の処理
     initHeaderScroll();
+    
+    // フローティングボタンの初期化
+    initFloatingButton();
   });
   
   // ページロード完了時の処理
@@ -184,3 +187,63 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 画像の遅延読み込みを初期化
   document.addEventListener('DOMContentLoaded', initLazyLoad);
+  
+  /**
+   * フローティングお問い合わせボタンの初期化
+   */
+  function initFloatingButton() {
+    const floatingBtn = document.querySelector('.floating-contact-btn');
+    
+    if (floatingBtn) {
+      let lastScrollTop = 0;
+      let isScrolling;
+      
+      // スクロール時の処理
+      window.addEventListener('scroll', function() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // スクロール中はボタンを半透明に
+        floatingBtn.style.opacity = '0.7';
+        floatingBtn.style.transition = 'opacity 0.3s ease';
+        
+        // スクロールが停止したらボタンを完全に表示
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(function() {
+          floatingBtn.style.opacity = '1';
+        }, 150);
+        
+        // 下方向スクロール時はボタンを少し下に移動
+        if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+          floatingBtn.style.transform = 'translateY(10px)';
+        } else {
+          floatingBtn.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+      });
+      
+      // フッター付近でボタンの位置を調整
+      window.addEventListener('scroll', function() {
+        const footer = document.querySelector('footer');
+        if (footer) {
+          const footerRect = footer.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // フッターが画面に入ったら、ボタンを上に移動
+          if (footerRect.top < windowHeight) {
+            const overlap = windowHeight - footerRect.top + 30; // 30pxの余白
+            floatingBtn.style.bottom = overlap + 'px';
+          } else {
+            // レスポンシブに応じた元の位置に戻す
+            if (window.innerWidth <= 480) {
+              floatingBtn.style.bottom = '15px';
+            } else if (window.innerWidth <= 768) {
+              floatingBtn.style.bottom = '20px';
+            } else {
+              floatingBtn.style.bottom = '30px';
+            }
+          }
+        }
+      });
+    }
+  }
