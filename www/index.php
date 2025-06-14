@@ -35,6 +35,110 @@ include 'header.php';
     <!-- tsParticles v3 最新版CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@3/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js"></script>
+    
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://technosphere.co.jp/#website",
+          "url": "https://technosphere.co.jp/",
+          "name": "株式会社テクノスフィア",
+          "description": "大阪発のシステム開発会社テクノスフィアは、画像認識・RAG チャットボット・エッジ AI まで一貫対応。要件定義から運用までワンストップで支援します。",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://technosphere.co.jp/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "ja"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://technosphere.co.jp/#organization",
+          "name": "株式会社テクノスフィア",
+          "url": "https://technosphere.co.jp/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://technosphere.co.jp/assets/img/common/logo_header.svg",
+            "width": 643,
+            "height": 92
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+81-6-4805-8282",
+            "contactType": "customer service",
+            "areaServed": "JP",
+            "availableLanguage": "Japanese"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "西中島7-7-3 エフベースミュゼオ201",
+            "addressLocality": "大阪市淀川区",
+            "addressRegion": "大阪府",
+            "postalCode": "532-0011",
+            "addressCountry": "JP"
+          },
+          "sameAs": [
+            "https://www.facebook.com/technosphere.co.ltd",
+            "https://x.com/technosphere_co",
+            "https://www.instagram.com/technosphere_co/"
+          ]
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://technosphere.co.jp/#navigation",
+          "name": "メインナビゲーション",
+          "hasPart": [
+            {
+              "@type": "WebPage",
+              "name": "メッセージ",
+              "url": "https://technosphere.co.jp/#message"
+            },
+            {
+              "@type": "WebPage",
+              "name": "事業案内",
+              "url": "https://technosphere.co.jp/#service"
+            },
+            {
+              "@type": "WebPage",
+              "name": "実績",
+              "url": "https://technosphere.co.jp/#achievements"
+            },
+            {
+              "@type": "WebPage",
+              "name": "会社概要",
+              "url": "https://technosphere.co.jp/#company"
+            },
+            {
+              "@type": "WebPage",
+              "name": "パートナー",
+              "url": "https://technosphere.co.jp/#partner"
+            },
+            {
+              "@type": "WebPage",
+              "name": "お知らせ",
+              "url": "https://technosphere.co.jp/#news"
+            },
+            {
+              "@type": "WebPage",
+              "name": "お問い合わせ",
+              "url": "https://technosphere.co.jp/contact"
+            },
+            {
+              "@type": "WebPage",
+              "name": "プライバシーポリシー",
+              "url": "https://technosphere.co.jp/privacy"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- パーティクル背景 -->

@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://technosphere.co.jp/</loc><priority>1.0</priority></url>
-  <url><loc>https://technosphere.co.jp/contact.php</loc></url>
-  <url><loc>https://technosphere.co.jp/privacy.php</loc></url>
-  <url><loc>https://technosphere.co.jp/thanks.php</loc></url>
-  <url><loc>https://technosphere.co.jp/success.php</loc></url>
-  <url><loc>https://technosphere.co.jp/ai_chatbot/</loc></url>
+  <!-- メインページ -->
+  <url>
+    <loc>https://technosphere.co.jp/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- アンカーリンク付きページ -->
+  <url>
+    <loc>https://technosphere.co.jp/#message</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/#service</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/#achievements</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/#company</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/#partner</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/#news</loc>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- 個別ページ -->
+  <url>
+    <loc>https://technosphere.co.jp/contact</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/privacy</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/thanks</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/success</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://technosphere.co.jp/ai_chatbot</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
