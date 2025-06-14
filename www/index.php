@@ -94,7 +94,7 @@ include 'header.php';
                         }
                     </style>
                     <span class="entit-box">
-                        <span class="mvtit-en fadeUp delay01">AI技術で、人と社会をスムーズにつなぐ</span>
+                        <span class="mvtit-en fadeUp delay01" style="color: rgb(63,151,209);">AI技術で、人と社会をスムーズにつなぐ</span>
                     </span>
                     <span class="mvtit-ja fadeUp delay03">未来にある便利で快適な暮らしを、テクノロジーで支えたい</span>
                 </h1>
