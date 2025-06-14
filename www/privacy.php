@@ -111,7 +111,7 @@
                         <dd>
                         皆様がご提供された個⼈情報の取り扱いについてのお問合せや、本プライバシーポリシーに関するお問い合わせにつきましては、下記メールアドレスもしくは当サイトのコンタクトフォームからご連絡ください。<br>
                         ただし、直ちに対応できない場合がございますので、予めご了承ください。<br>
-                        info@technosphere.co.jp
+                        https://technosphere.co.jp/contact<br>
                         </dd>
                     </dl>                   
                 </div>
@@ -152,10 +152,7 @@
                         問い合わせ窓口は下記となります。<br>
                         <br>
                         株式会社 テクノスフィア<br>
-                        TEL ：(06)4805-8282<br>
-                        FAX ：(06)4805-8283<br>
-                        E-mail：info@technosphere.co.jp<br>
-                        URL：https://technosphere.co.jp
+                        URL：https://technosphere.co.jp/contact<br>
                         </dd>
                     </dl>                   
                     <dl class="praivacy-item">
