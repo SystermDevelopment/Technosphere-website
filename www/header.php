@@ -25,11 +25,12 @@ if (!isset($page_desc)) {
                 <li><a href="./#news">新着情報</a></li>
                 <li><a href="https://en-gage.net/technosphere_saiyo" target="_blank">採用情報<i class="fa-regular fa-window-restore"></i></a></li>
                 <li><a href="contact">お問い合わせ</a></li>  
-                <li> <a href="https://www.facebook.com/technosphere.co.ltd" target="_blank" rel="noopener"> <i class="fab fa-facebook-square" aria-label="Facebook"></i> </a> </li> 
-                <li><a href="https://x.com/technosphere_co" target="_blank" rel="noopener"> <i class="fab fa-x-twitter" aria-label="X（旧Twitter）"></i> </a> </li>
-                <li><a href="https://www.instagram.com/technosphere_co/" target="_blank" rel="noopener"> <i class="fab fa-instagram" aria-label="Instagram"></i> </a> </li>  
-                <li class="menu-env-status">
-                    オフィス環境：<br><span id="menu-status-icon">🔄</span>
+                <li class="sns-icons">
+                    <div class="sns-icons-wrapper">
+                        <a href="https://www.facebook.com/technosphere.co.ltd" target="_blank" rel="noopener"> <i class="fab fa-facebook-square" aria-label="Facebook"></i> </a>
+                        <a href="https://x.com/technosphere_co" target="_blank" rel="noopener"> <i class="fab fa-x-twitter" aria-label="X（旧Twitter）"></i> </a>
+                        <a href="https://www.instagram.com/technosphere_co/" target="_blank" rel="noopener"> <i class="fab fa-instagram" aria-label="Instagram"></i> </a>
+                    </div>
                 </li>  
             </ul>
         </div>
